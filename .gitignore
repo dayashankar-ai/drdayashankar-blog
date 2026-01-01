@@ -1,0 +1,15 @@
+# Ignore sensitive files (just in case)
+.env
+*.key
+*.pem
+config.php
+secrets.json
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore editor files
+.vscode/
+.idea/
+*.swp
