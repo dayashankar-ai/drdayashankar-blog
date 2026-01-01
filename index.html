@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 header('Content-Type: text/html; charset=UTF-8');
 ?>
 <!DOCTYPE html>
@@ -606,7 +606,7 @@ header('Content-Type: text/html; charset=UTF-8');
         }
 
         .popup-benefits li::before {
-            content: '✓';
+            content: 'âœ“';
             width: 1.5rem;
             height: 1.5rem;
             background: #dcfce7;
@@ -727,7 +727,7 @@ header('Content-Type: text/html; charset=UTF-8');
         <div class="popup">
             <div class="popup-header">
                 <button class="popup-close" onclick="closePopup()">&times;</button>
-                <div class="popup-icon">📧</div>
+                <div class="popup-icon">ðŸ“§</div>
                 <h2>Join 5,000+ Healthcare Leaders</h2>
                 <p>Get exclusive AI insights delivered weekly</p>
             </div>
@@ -743,7 +743,7 @@ header('Content-Type: text/html; charset=UTF-8');
                     <input type="email" placeholder="Your Email Address" required>
                     <button type="submit">Get Free Insights</button>
                 </form>
-                <p class="popup-privacy">🔒 No spam. Unsubscribe anytime. We respect your privacy.</p>
+                <p class="popup-privacy">ðŸ”’ No spam. Unsubscribe anytime. We respect your privacy.</p>
             </div>
         </div>
     </div>
@@ -767,80 +767,134 @@ header('Content-Type: text/html; charset=UTF-8');
     </div>
 
     <div class="container">
-        <?php
-        // Load posts from JSON
-        $jsonPath = __DIR__ . '/../uploads/blog-posts/posts-list.json';
-        $posts = [];
-        
-        if (file_exists($jsonPath)) {
-            $jsonContent = file_get_contents($jsonPath);
-            $posts = json_decode($jsonContent, true);
-            
-            // Sort by date (newest first)
-            usort($posts, function($a, $b) {
-                return strcmp($b['date'], $a['date']);
-            });
-        }
-
-        if (!empty($posts)) {
-            // Featured post (first post)
-            $featured = $posts[0];
-            $featuredDate = date('M d, Y', strtotime($featured['date']));
-            
-            // CRITICAL FIX: Use correct thumbnail path
-            $thumbnailPath = '/uploads/blog-posts/thumbnails/' . $featured['date'] . '-' . $featured['slug'] . '.png';
-            
-            echo '<div class="featured">';
-            echo '<div class="featured-image">';
-            echo '<img src="' . htmlspecialchars($thumbnailPath) . '" alt="' . htmlspecialchars($featured['title']) . '" loading="lazy">';
-            echo '</div>';
-            echo '<div class="featured-content">';
-            echo '<span class="featured-badge">Featured</span>';
-            echo '<div class="featured-meta">';
-            echo '<span>�� ' . $featuredDate . '</span>';
-            echo '<span>⏱️ 5-7 min read</span>';
-            echo '</div>';
-            echo '<h2>' . htmlspecialchars($featured['title']) . '</h2>';
-            echo '<p>' . htmlspecialchars($featured['description']) . '</p>';
-            echo '<a href="/uploads/blog-posts/' . $featured['date'] . '-' . $featured['slug'] . '.html" class="btn">Read Full Article</a>';
-            echo '</div>';
-            echo '</div>';
-
-            // Recent articles
-            echo '<h2 class="section-title">Recent Articles</h2>';
-            echo '<div class="blog-grid">';
-            
-            // Show remaining posts (skip featured)
-            for ($i = 1; $i < count($posts); $i++) {
-                $post = $posts[$i];
-                $postDate = date('M d, Y', strtotime($post['date']));
-                
-                // CRITICAL FIX: Use correct thumbnail path
-                $postThumbnail = '/uploads/blog-posts/thumbnails/' . $post['date'] . '-' . $post['slug'] . '.png';
-                
-                echo '<a href="/uploads/blog-posts/' . $post['date'] . '-' . $post['slug'] . '.html" class="blog-card">';
-                echo '<div class="blog-card-image">';
-                echo '<img src="' . htmlspecialchars($postThumbnail) . '" alt="' . htmlspecialchars($post['title']) . '" loading="lazy">';
-                echo '</div>';
-                echo '<div class="blog-card-content">';
-                echo '<div class="blog-card-meta">';
-                echo '<span>📅 ' . $postDate . '</span>';
-                echo '<span>Healthcare AI</span>';
-                echo '</div>';
-                echo '<h3>' . htmlspecialchars($post['title']) . '</h3>';
-                echo '<p>' . htmlspecialchars(substr($post['description'], 0, 120)) . '...</p>';
-                echo '<div class="blog-card-footer">Read More →</div>';
-                echo '</div>';
-                echo '</a>';
-            }
-            
-            echo '</div>';
-        } else {
-            echo '<div style="text-align: center; padding: 4rem 0;">';
-            echo '<p style="font-size: 1.5rem; color: #64748b;">📝 Blog coming soon!</p>';
-            echo '</div>';
-        }
-        ?>
+      <div class="blog-grid">
+        <a href="https://drdayashankar.in/uploads/blog-posts/2025-12-31-ai-powered-clinical-decision-support-transforming-healthcare-india.html" class="blog-card">
+          <div class="blog-card-image">
+            <img src="https://drdayashankar.in/uploads/blog-posts/thumbnails/2025-12-31-ai-powered-clinical-decision-support-transforming-healthcare-india.png" alt="Ai Powered Clinical Decision Support Transforming Healthcare India" loading="lazy">
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span>ðŸ“… Dec 31, 2025</span>
+              <span>Healthcare AI</span>
+            </div>
+            <h3>Ai Powered Clinical Decision Support Transforming Healthcare India</h3>
+            <p>Discover how AI-powered clinical decision support systems are revolutionizing healthcare in India. Expert insights from ...</p>
+            <div class="blog-card-footer">Read More â†’</div>
+          </div>
+        </a>
+        <a href="https://drdayashankar.in/uploads/blog-posts/2025-12-31-physics-first-thinking-why-your-healthcare-ai-fails-without-first-principles.html" class="blog-card">
+          <div class="blog-card-image">
+            <img src="https://drdayashankar.in/uploads/blog-posts/thumbnails/2025-12-31-physics-first-thinking-why-your-healthcare-ai-fails-without-first-principles.png" alt="Physics First Thinking Why Your Healthcare Ai Fails Without First Principles" loading="lazy">
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span>ðŸ“… Dec 31, 2025</span>
+              <span>Healthcare AI</span>
+            </div>
+            <h3>Physics First Thinking Why Your Healthcare Ai Fails Without First Principles</h3>
+            <p>Discover why physics-first thinking is essential for healthcare AI success. Learn how first principles from nuclear engi...</p>
+            <div class="blog-card-footer">Read More â†’</div>
+          </div>
+        </a>
+        <a href="https://drdayashankar.in/uploads/blog-posts/2025-12-31-solving-india-doctor-patient-ratio-ai.html" class="blog-card">
+          <div class="blog-card-image">
+            <img src="https://drdayashankar.in/uploads/blog-posts/thumbnails/2025-12-31-solving-india-doctor-patient-ratio-ai.png" alt="Solving India Doctor Patient Ratio Ai" loading="lazy">
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span>ðŸ“… Dec 31, 2025</span>
+              <span>Healthcare AI</span>
+            </div>
+            <h3>Solving India Doctor Patient Ratio Ai</h3>
+            <p>How AI clinical decision support can bridge India's critical healthcare gap. Nuclear engineer turned healthcare AI pione...</p>
+            <div class="blog-card-footer">Read More â†’</div>
+          </div>
+        </a>
+        <a href="https://drdayashankar.in/uploads/blog-posts/2025-12-31-clinical-decision-support-missing-40-percent.html" class="blog-card">
+          <div class="blog-card-image">
+            <img src="https://drdayashankar.in/uploads/blog-posts/thumbnails/2025-12-31-clinical-decision-support-missing-40-percent.png" alt="Clinical Decision Support Missing 40 Percent" loading="lazy">
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span>ðŸ“… Dec 31, 2025</span>
+              <span>Healthcare AI</span>
+            </div>
+            <h3>Clinical Decision Support Missing 40 Percent</h3>
+            <p>Discover how AI-powered clinical decision support systems unlock the hidden 40% efficiency gap in healthcare delivery. E...</p>
+            <div class="blog-card-footer">Read More â†’</div>
+          </div>
+        </a>
+        <a href="https://drdayashankar.in/uploads/blog-posts/2025-12-31-computational-fluid-dynamics-principles-applied-to-medical-diagnostics.html" class="blog-card">
+          <div class="blog-card-image">
+            <img src="https://drdayashankar.in/uploads/blog-posts/thumbnails/2025-12-31-computational-fluid-dynamics-principles-applied-to-medical-diagnostics.png" alt="Computational Fluid Dynamics Principles Applied To Medical Diagnostics" loading="lazy">
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span>ðŸ“… Dec 31, 2025</span>
+              <span>Healthcare AI</span>
+            </div>
+            <h3>Computational Fluid Dynamics Principles Applied To Medical Diagnostics</h3>
+            <p>Revolutionary CFD applications transforming medical diagnostics through physics-first thinking, from nuclear thermal hyd...</p>
+            <div class="blog-card-footer">Read More â†’</div>
+          </div>
+        </a>
+        <a href="https://drdayashankar.in/uploads/blog-posts/2025-12-31-care-cure-portal-revolutionary-ai-powered-healthcare-management-ecosystem.html" class="blog-card">
+          <div class="blog-card-image">
+            <img src="https://drdayashankar.in/uploads/blog-posts/thumbnails/2025-12-31-care-cure-portal-revolutionary-ai-powered-healthcare-management-ecosystem.png" alt="Care Cure Portal Revolutionary Ai Powered Healthcare Management Ecosystem" loading="lazy">
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span>ðŸ“… Dec 31, 2025</span>
+              <span>Healthcare AI</span>
+            </div>
+            <h3>Care Cure Portal Revolutionary Ai Powered Healthcare Management Ecosystem</h3>
+            <p>Expert insights from Dr. Daya Shankar on healthcare AI innovation....</p>
+            <div class="blog-card-footer">Read More â†’</div>
+          </div>
+        </a>
+        <a href="https://drdayashankar.in/uploads/blog-posts/2025-12-31-real-time-drug-interaction-detection.html" class="blog-card">
+          <div class="blog-card-image">
+            <img src="https://drdayashankar.in/uploads/blog-posts/thumbnails/2025-12-31-real-time-drug-interaction-detection.png" alt="Real Time Drug Interaction Detection" loading="lazy">
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span>ðŸ“… Dec 31, 2025</span>
+              <span>Healthcare AI</span>
+            </div>
+            <h3>Real Time Drug Interaction Detection</h3>
+            <p>How AI prevents 92% of dangerous drug interactions instantly. Nuclear engineer reveals computational approach to medicat...</p>
+            <div class="blog-card-footer">Read More â†’</div>
+          </div>
+        </a>
+        <a href="https://drdayashankar.in/uploads/blog-posts/2025-12-31-nuclear-engineering-healthcare-ai.html" class="blog-card">
+          <div class="blog-card-image">
+            <img src="https://drdayashankar.in/uploads/blog-posts/thumbnails/2025-12-31-nuclear-engineering-healthcare-ai.png" alt="Nuclear Engineering Healthcare Ai" loading="lazy">
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span>ðŸ“… Dec 31, 2025</span>
+              <span>Healthcare AI</span>
+            </div>
+            <h3>Nuclear Engineering Healthcare Ai</h3>
+            <p>Discover how nuclear engineering principles deliver 99.7% diagnostic accuracy in healthcare AI. Explore VaidyaAI's react...</p>
+            <div class="blog-card-footer">Read More â†’</div>
+          </div>
+        </a>
+        <a href="https://drdayashankar.in/uploads/blog-posts/2025-12-31-deep-learning-architecture-image-processing-pipeline.html" class="blog-card">
+          <div class="blog-card-image">
+            <img src="https://drdayashankar.in/uploads/blog-posts/thumbnails/2025-12-31-deep-learning-architecture-image-processing-pipeline.png" alt="Deep Learning Architecture Image Processing Pipeline" loading="lazy">
+          </div>
+          <div class="blog-card-content">
+            <div class="blog-card-meta">
+              <span>ðŸ“… Dec 31, 2025</span>
+              <span>Healthcare AI</span>
+            </div>
+            <h3>Deep Learning Architecture Image Processing Pipeline</h3>
+            <p>Expert insights from Dr. Daya Shankar on healthcare AI innovation....</p>
+            <div class="blog-card-footer">Read More â†’</div>
+          </div>
+        </a>
+      </div>
     </div>
 
     <footer class="footer">
@@ -977,3 +1031,4 @@ header('Content-Type: text/html; charset=UTF-8');
     </script>
 </body>
 </html>
+
