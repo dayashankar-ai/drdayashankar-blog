@@ -1,0 +1,48 @@
+# 🔗 FIX MAIN WEBSITE BLOG LINK
+
+## WHERE TO UPDATE
+
+Your main website: drdayashankar.in (Hostinger)
+
+## WHAT TO CHANGE
+
+Find this in your navigation/header:
+<a href="/blog">Blog</a>
+<a href="/blog/">Blog</a>
+<a href="blog.php">Blog</a>
+
+Change to:
+<a href="https://blog.drdayashankar.in">Blog</a>
+
+## HOW TO DO IT
+
+### Option 1: Hostinger File Manager
+1. Log into Hostinger cPanel
+2. File Manager → public_html
+3. Find: index.html or header.php or navigation.php
+4. Edit the Blog link
+5. Save
+
+### Option 2: VS Code
+1. Open your main website files
+2. Ctrl+Shift+F (Find in Files)
+3. Search: href="/blog
+4. Replace with: href="https://blog.drdayashankar.in
+5. Upload changed files to Hostinger
+
+## FILES TO CHECK
+
+Common locations:
+- index.html (homepage)
+- header.php (if PHP site)
+- includes/navigation.php
+- includes/header.html
+- Any template files
+
+## TEST
+
+After updating:
+1. Visit: https://drdayashankar.in
+2. Click "Blog" in navigation
+3. Should go to: https://blog.drdayashankar.in ✅
+
