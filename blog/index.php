@@ -247,6 +247,168 @@ header('Content-Type: text/html; charset=UTF-8');
             text-align: center;
         }
 
+        /* EMAIL POPUP STYLES */
+        .email-popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            animation: fadeIn 0.3s;
+        }
+
+        .email-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 1rem;
+            padding: 2.5rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s;
+        }
+
+        .popup-close:hover {
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        .popup-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .email-popup h2 {
+            font-size: 1.75rem;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+
+        .email-popup p {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .popup-benefits {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .popup-benefits li {
+            padding: 0.5rem 0;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .popup-benefits li:before {
+            content: '✓';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .popup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .popup-input {
+            padding: 0.875rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .popup-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .popup-submit {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .popup-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+        }
+
+        .popup-privacy {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translate(-50%, -40%);
+            }
+            to { 
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 1.875rem;
@@ -264,10 +426,52 @@ header('Content-Type: text/html; charset=UTF-8');
                 flex-direction: column;
                 gap: 1rem;
             }
+
+            .email-popup {
+                padding: 2rem 1.5rem;
+            }
+
+            .email-popup h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- EMAIL POPUP -->
+    <div class="email-popup-overlay" id="emailPopup">
+        <div class="email-popup">
+            <button class="popup-close" onclick="closePopup()">×</button>
+            <div class="popup-icon">📧</div>
+            <h2>Get Weekly Healthcare AI Insights</h2>
+            <p>Join 1,000+ healthcare professionals receiving cutting-edge AI strategies</p>
+            
+            <ul class="popup-benefits">
+                <li>Latest AI implementation case studies</li>
+                <li>Exclusive ROI calculators & templates</li>
+                <li>Early access to new research</li>
+                <li>Free trial of VaidyaAI platform</li>
+            </ul>
+
+            <form class="popup-form" id="subscribeForm" onsubmit="handleSubmit(event)">
+                <input 
+                    type="email" 
+                    class="popup-input" 
+                    placeholder="Enter your email" 
+                    required 
+                    id="emailInput"
+                >
+                <button type="submit" class="popup-submit">
+                    Subscribe Free
+                </button>
+            </form>
+
+            <p class="popup-privacy">
+                🔒 Your email is safe. Unsubscribe anytime. No spam, ever.
+            </p>
+        </div>
+    </div>
+
     <nav class="nav">
         <div class="nav-content">
             <a href="/" style="font-weight: 600;">DST</a>
@@ -305,8 +509,6 @@ header('Content-Type: text/html; charset=UTF-8');
             // Featured post (first post)
             $featured = $posts[0];
             $featuredDate = date('M d, Y', strtotime($featured['date']));
-            
-            // CRITICAL FIX: Use correct thumbnail path
             $thumbnailPath = '/uploads/blog-posts/thumbnails/' . $featured['date'] . '-' . $featured['slug'] . '.png';
             
             echo '<div class="featured">';
@@ -316,7 +518,7 @@ header('Content-Type: text/html; charset=UTF-8');
             echo '<div class="featured-content">';
             echo '<span class="featured-badge">Featured</span>';
             echo '<div class="featured-meta">';
-            echo '<span>�� ' . $featuredDate . '</span>';
+            echo '<span>📅 ' . $featuredDate . '</span>';
             echo '<span>⏱️ 5-7 min read</span>';
             echo '</div>';
             echo '<h2>' . htmlspecialchars($featured['title']) . '</h2>';
@@ -329,12 +531,9 @@ header('Content-Type: text/html; charset=UTF-8');
             echo '<h2 class="section-title">Recent Articles</h2>';
             echo '<div class="blog-grid">';
             
-            // Show remaining posts (skip featured)
             for ($i = 1; $i < count($posts); $i++) {
                 $post = $posts[$i];
                 $postDate = date('M d, Y', strtotime($post['date']));
-                
-                // CRITICAL FIX: Use correct thumbnail path
                 $postThumbnail = '/uploads/blog-posts/thumbnails/' . $post['date'] . '-' . $post['slug'] . '.png';
                 
                 echo '<a href="/uploads/blog-posts/' . $post['date'] . '-' . $post['slug'] . '.html" class="blog-card">';
@@ -368,5 +567,68 @@ header('Content-Type: text/html; charset=UTF-8');
             <p style="margin-top: 0.5rem; opacity: 0.8;">Dean, School of Sciences | VaidyaAI Founder | ET GrailHunt PhD</p>
         </div>
     </footer>
+
+    <script>
+        // Show popup after 30 seconds
+        setTimeout(function() {
+            // Check if user has already seen popup today
+            const lastShown = localStorage.getItem('emailPopupShown');
+            const today = new Date().toDateString();
+            
+            if (lastShown !== today) {
+                document.getElementById('emailPopup').style.display = 'block';
+                localStorage.setItem('emailPopupShown', today);
+                
+                // Track popup view in Google Analytics
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'popup_shown', {
+                        'event_category': 'engagement',
+                        'event_label': 'email_signup_popup'
+                    });
+                }
+            }
+        }, 30000); // 30 seconds
+
+        function closePopup() {
+            document.getElementById('emailPopup').style.display = 'none';
+            
+            // Track popup close
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'popup_closed', {
+                    'event_category': 'engagement',
+                    'event_label': 'email_signup_popup'
+                });
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('emailInput').value;
+            
+            // Track email signup attempt
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'email_signup', {
+                    'event_category': 'conversion',
+                    'event_label': 'blog_popup'
+                });
+            }
+            
+            // TODO: Connect to Mailchimp (we'll do this next)
+            // For now, just show success message
+            alert('Thanks for subscribing! Check your email for confirmation.');
+            closePopup();
+            
+            // Reset form
+            document.getElementById('subscribeForm').reset();
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('emailPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+    </script>
 </body>
 </html>
