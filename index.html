@@ -7,7 +7,7 @@
     <meta name="description" content="Practical, board-level guidance to plan, govern, and scale AI in healthcare. Nuclear-grade systems engineering meets clinical safety and ROI models.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKFH6DZL08"></script>
@@ -37,11 +37,7 @@
             --bg: #f8fafc;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -49,7 +45,6 @@
             color: var(--dark);
             background: var(--bg);
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         /* Navigation */
@@ -185,7 +180,6 @@
             font-size: 1.25rem;
             opacity: 0.95;
             line-height: 1.7;
-            font-weight: 400;
         }
 
         /* Container */
@@ -204,8 +198,7 @@
             margin-bottom: 5rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s;
         }
 
         .featured:hover {
@@ -216,7 +209,7 @@
         .featured-image {
             position: relative;
             min-height: 400px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
         }
 
         .featured-image img {
@@ -235,7 +228,6 @@
             top: 1.5rem;
             left: 1.5rem;
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
             color: var(--primary);
             padding: 0.5rem 1.25rem;
             border-radius: 50px;
@@ -254,18 +246,11 @@
 
         .featured-meta {
             display: flex;
-            align-items: center;
             gap: 1.5rem;
             margin-bottom: 1.5rem;
             font-size: 0.875rem;
             color: var(--gray);
             font-weight: 500;
-        }
-
-        .featured-meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
         .featured h2 {
@@ -274,7 +259,6 @@
             margin-bottom: 1.25rem;
             line-height: 1.2;
             letter-spacing: -0.75px;
-            color: var(--dark);
         }
 
         .featured-desc {
@@ -294,7 +278,6 @@
             border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
             transition: all 0.3s;
             box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
             align-self: flex-start;
@@ -313,7 +296,6 @@
         .section-title {
             font-size: 2.5rem;
             font-weight: 800;
-            color: var(--dark);
             margin-bottom: 0.75rem;
             letter-spacing: -1px;
         }
@@ -337,12 +319,11 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s;
             text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
-            height: 100%;
         }
 
         .blog-card:hover {
@@ -354,7 +335,7 @@
             position: relative;
             width: 100%;
             padding-top: 60%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             overflow: hidden;
         }
 
@@ -377,13 +358,11 @@
             top: 1.25rem;
             left: 1.25rem;
             background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
             color: var(--primary);
             padding: 0.4rem 1rem;
             border-radius: 50px;
             font-size: 0.8125rem;
             font-weight: 700;
-            letter-spacing: 0.5px;
         }
 
         .blog-card-content {
@@ -395,7 +374,6 @@
 
         .blog-card-meta {
             display: flex;
-            align-items: center;
             gap: 1rem;
             margin-bottom: 1rem;
             font-size: 0.875rem;
@@ -408,7 +386,6 @@
             font-weight: 700;
             margin-bottom: 1rem;
             line-height: 1.3;
-            color: var(--dark);
             letter-spacing: -0.5px;
         }
 
@@ -426,7 +403,6 @@
             gap: 0.5rem;
             color: var(--primary);
             font-weight: 600;
-            font-size: 0.9375rem;
         }
 
         .blog-card-footer::after {
@@ -438,25 +414,15 @@
             transform: translateX(4px);
         }
 
-        /* Newsletter Section */
+        /* Newsletter */
         .newsletter {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 24px;
             padding: 4rem;
             text-align: center;
             position: relative;
             overflow: hidden;
             margin-bottom: 4rem;
-        }
-
-        .newsletter::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
         .newsletter-content {
@@ -466,40 +432,22 @@
             margin: 0 auto;
         }
 
-        .newsletter-icon {
-            width: 64px;
-            height: 64px;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
         .newsletter h2 {
             color: white;
             font-size: 2.25rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            letter-spacing: -0.75px;
         }
 
         .newsletter p {
             color: rgba(255, 255, 255, 0.9);
             font-size: 1.125rem;
             margin-bottom: 2rem;
-            line-height: 1.7;
         }
 
         .newsletter-form {
             display: flex;
             gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
         }
 
         .newsletter-input {
@@ -507,21 +455,13 @@
             padding: 1.125rem 1.5rem;
             border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 12px;
-            font-size: 1rem;
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
             color: white;
-            transition: all 0.3s;
+            font-size: 1rem;
         }
 
         .newsletter-input::placeholder {
             color: rgba(255, 255, 255, 0.6);
-        }
-
-        .newsletter-input:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.5);
         }
 
         .newsletter-btn {
@@ -531,7 +471,6 @@
             border: none;
             border-radius: 12px;
             font-weight: 700;
-            font-size: 1rem;
             cursor: pointer;
             transition: all 0.3s;
         }
@@ -562,34 +501,6 @@
             font-size: 1.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
-        }
-
-        .footer-desc {
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .social-link:hover {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            transform: translateY(-2px);
         }
 
         .footer-section h4 {
@@ -624,32 +535,7 @@
             font-size: 0.875rem;
         }
 
-        .footer-achievement {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            padding: 2rem;
-            border-radius: 16px;
-            margin-top: 2rem;
-        }
-
-        .achievement-label {
-            font-size: 0.875rem;
-            opacity: 0.9;
-            margin-bottom: 0.5rem;
-        }
-
-        .achievement-value {
-            font-size: 3rem;
-            font-weight: 800;
-            color: white;
-            margin-bottom: 0.25rem;
-        }
-
-        .achievement-desc {
-            font-size: 0.9375rem;
-            opacity: 0.9;
-        }
-
-        /* Email Popup */
+        /* Email Popup - FIXED */
         .popup-overlay {
             display: none;
             position: fixed;
@@ -663,6 +549,10 @@
             animation: fadeIn 0.3s;
         }
 
+        .popup-overlay.show {
+            display: block !important;
+        }
+
         .popup {
             position: fixed;
             top: 50%;
@@ -673,7 +563,7 @@
             padding: 3rem;
             max-width: 540px;
             width: 90%;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
             animation: slideUp 0.4s;
         }
 
@@ -689,12 +579,10 @@
             font-size: 1.5rem;
             cursor: pointer;
             transition: all 0.2s;
-            color: var(--gray);
         }
 
         .popup-close:hover {
             background: var(--gray-light);
-            color: var(--dark);
         }
 
         .popup-icon {
@@ -714,16 +602,12 @@
             font-weight: 800;
             text-align: center;
             margin-bottom: 1rem;
-            color: var(--dark);
-            letter-spacing: -0.75px;
         }
 
         .popup-desc {
             text-align: center;
             color: var(--gray);
             margin-bottom: 2rem;
-            font-size: 1.0625rem;
-            line-height: 1.7;
         }
 
         .popup-benefits {
@@ -734,10 +618,7 @@
         .popup-benefits li {
             padding: 0.875rem 0;
             display: flex;
-            align-items: center;
             gap: 1rem;
-            color: var(--dark);
-            font-weight: 500;
         }
 
         .popup-benefits li::before {
@@ -765,7 +646,6 @@
             border: 2px solid var(--gray-light);
             border-radius: 12px;
             font-size: 1rem;
-            transition: all 0.3s;
         }
 
         .popup-input:focus {
@@ -804,66 +684,37 @@
         }
 
         @keyframes slideUp {
-            from { 
-                opacity: 0;
-                transform: translate(-50%, -45%);
-            }
-            to { 
-                opacity: 1;
-                transform: translate(-50%, -50%);
-            }
+            from { opacity: 0; transform: translate(-50%, -45%); }
+            to { opacity: 1; transform: translate(-50%, -50%); }
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .featured {
+            .featured, .footer-container {
                 grid-template-columns: 1fr;
             }
-
             .blog-grid {
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
             }
         }
 
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
-            }
-
-            .nav-menu {
-                display: none;
-            }
-
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-
-            .popup {
-                padding: 2rem 1.5rem;
-            }
+            .header h1 { font-size: 2.5rem; }
+            .nav-menu { display: none; }
+            .blog-grid { grid-template-columns: 1fr; }
+            .newsletter-form { flex-direction: column; }
+            .popup { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Email Popup -->
+    <!-- Email Popup - FIXED -->
     <div class="popup-overlay" id="emailPopup">
         <div class="popup">
             <button class="popup-close" onclick="closePopup()">×</button>
             <div class="popup-icon">📧</div>
             <h2>Get Weekly AI Insights</h2>
-            <p class="popup-desc">Join 1,000+ healthcare professionals receiving cutting-edge AI strategies</p>
+            <p class="popup-desc">Join 1,000+ healthcare professionals</p>
             
             <ul class="popup-benefits">
                 <li>Latest AI implementation case studies</li>
@@ -873,11 +724,11 @@
             </ul>
 
             <form class="popup-form" id="subscribeForm" onsubmit="handleSubmit(event)">
-                <input type="email" class="popup-input" placeholder="Enter your email address" required id="emailInput">
+                <input type="email" class="popup-input" placeholder="Enter your email" required id="emailInput">
                 <button type="submit" class="popup-submit">Subscribe Free</button>
             </form>
 
-            <p class="popup-privacy">🔒 Your email is safe. Unsubscribe anytime. No spam, ever.</p>
+            <p class="popup-privacy">🔒 No spam. Unsubscribe anytime.</p>
         </div>
     </div>
 
@@ -891,14 +742,13 @@
             <ul class="nav-menu">
                 <li><a href="https://drdayashankar.in" class="nav-link">Home</a></li>
                 <li><a href="https://drdayashankar.in/about" class="nav-link">About</a></li>
-                <li><a href="https://drdayashankar.in/vaidyaai" class="nav-link">VaidyaAI</a></li>
                 <li><a href="https://blog.drdayashankar.in" class="nav-link">Blog</a></li>
                 <li><a href="https://drdayashankar.in/contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Header Hero -->
+    <!-- Header -->
     <div class="header">
         <div class="header-content">
             <span class="header-badge">🧠 Enterprise Healthcare AI</span>
@@ -912,7 +762,7 @@
         <article class="featured">
             <div class="featured-image">
                 <span class="featured-badge">Featured</span>
-                <img src="/uploads/blog-posts/thumbnails/2025-12-31-real-time-drug-interaction-detection.png" alt="Real Time Drug Interaction Detection" loading="eager">
+                <img src="/uploads/blog-posts/thumbnails/2025-12-31-real-time-drug-interaction-detection.png" alt="Real Time Drug Interaction Detection">
             </div>
             <div class="featured-content">
                 <div class="featured-meta">
@@ -921,24 +771,19 @@
                 </div>
                 <h2>Real Time Drug Interaction Detection</h2>
                 <p class="featured-desc">How AI prevents 92% of dangerous drug interactions instantly. Nuclear engineer reveals computational approach to medication safety that protects patients and doctors.</p>
-                <a href="/uploads/blog-posts/2025-12-31-real-time-drug-interaction-detection.html" class="btn-primary">
-                    Read Full Article
-                    <span>→</span>
-                </a>
+                <a href="/uploads/blog-posts/2025-12-31-real-time-drug-interaction-detection.html" class="btn-primary">Read Full Article <span>→</span></a>
             </div>
         </article>
 
-        <!-- Recent Articles -->
         <div class="section-header">
             <h2 class="section-title">Recent Articles</h2>
             <p class="section-subtitle">Expert insights on healthcare AI innovation</p>
         </div>
 
-        <div class="blog-grid">
-            <article class="blog-card">
+        <div class="blog-grid">            <a href="/uploads/blog-posts/2025-12-31-care-cure-portal-revolutionary-ai-powered-healthcare-management-ecosystem.html" class="blog-card">
                 <div class="blog-card-image-wrapper">
                     <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-care-cure-portal-revolutionary-ai-powered-healthcare-management-ecosystem.png" alt="Care Cure Portal Revolutionary Ai Powered Healthcare Management Ecosystem" class="blog-card-image" loading="lazy">
+                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-care-cure-portal-revolutionary-ai-powered-healthcare-management-ecosystem.png" alt="Care Cure Portal Revolutionary Ai Powered Healthcare Management Ecosystem" class="blog-card-image">
                 </div>
                 <div class="blog-card-content">
                     <div class="blog-card-meta">
@@ -949,11 +794,10 @@
                     <p class="blog-card-desc">Expert insights from Dr. Daya Shankar on healthcare AI innovation.</p>
                     <div class="blog-card-footer">Read More</div>
                 </div>
-            </article>
-            <article class="blog-card">
+            </a>            <a href="/uploads/blog-posts/2025-12-31-deep-learning-architecture-image-processing-pipeline.html" class="blog-card">
                 <div class="blog-card-image-wrapper">
                     <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-deep-learning-architecture-image-processing-pipeline.png" alt="Deep Learning Architecture Image Processing Pipeline" class="blog-card-image" loading="lazy">
+                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-deep-learning-architecture-image-processing-pipeline.png" alt="Deep Learning Architecture Image Processing Pipeline" class="blog-card-image">
                 </div>
                 <div class="blog-card-content">
                     <div class="blog-card-meta">
@@ -964,11 +808,10 @@
                     <p class="blog-card-desc">Expert insights from Dr. Daya Shankar on healthcare AI innovation.</p>
                     <div class="blog-card-footer">Read More</div>
                 </div>
-            </article>
-            <article class="blog-card">
+            </a>            <a href="/uploads/blog-posts/2025-12-31-nuclear-engineering-healthcare-ai.html" class="blog-card">
                 <div class="blog-card-image-wrapper">
                     <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-nuclear-engineering-healthcare-ai.png" alt="Nuclear Engineering Healthcare Ai" class="blog-card-image" loading="lazy">
+                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-nuclear-engineering-healthcare-ai.png" alt="Nuclear Engineering Healthcare Ai" class="blog-card-image">
                 </div>
                 <div class="blog-card-content">
                     <div class="blog-card-meta">
@@ -979,11 +822,10 @@
                     <p class="blog-card-desc">Discover how nuclear engineering principles deliver 99.7% diagnostic accuracy in healthcare AI. Explore VaidyaAI&apos;s react...</p>
                     <div class="blog-card-footer">Read More</div>
                 </div>
-            </article>
-            <article class="blog-card">
+            </a>            <a href="/uploads/blog-posts/2025-12-31-computational-fluid-dynamics-principles-applied-to-medical-diagnostics.html" class="blog-card">
                 <div class="blog-card-image-wrapper">
                     <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-computational-fluid-dynamics-principles-applied-to-medical-diagnostics.png" alt="Computational Fluid Dynamics Principles Applied To Medical Diagnostics" class="blog-card-image" loading="lazy">
+                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-computational-fluid-dynamics-principles-applied-to-medical-diagnostics.png" alt="Computational Fluid Dynamics Principles Applied To Medical Diagnostics" class="blog-card-image">
                 </div>
                 <div class="blog-card-content">
                     <div class="blog-card-meta">
@@ -994,11 +836,10 @@
                     <p class="blog-card-desc">Revolutionary CFD applications transforming medical diagnostics through physics-first thinking, from nuclear thermal hyd...</p>
                     <div class="blog-card-footer">Read More</div>
                 </div>
-            </article>
-            <article class="blog-card">
+            </a>            <a href="/uploads/blog-posts/2025-12-31-physics-first-thinking-why-your-healthcare-ai-fails-without-first-principles.html" class="blog-card">
                 <div class="blog-card-image-wrapper">
                     <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-physics-first-thinking-why-your-healthcare-ai-fails-without-first-principles.png" alt="Physics First Thinking Why Your Healthcare Ai Fails Without First Principles" class="blog-card-image" loading="lazy">
+                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-physics-first-thinking-why-your-healthcare-ai-fails-without-first-principles.png" alt="Physics First Thinking Why Your Healthcare Ai Fails Without First Principles" class="blog-card-image">
                 </div>
                 <div class="blog-card-content">
                     <div class="blog-card-meta">
@@ -1009,11 +850,10 @@
                     <p class="blog-card-desc">Discover why physics-first thinking is essential for healthcare AI success. Learn how first principles from nuclear engi...</p>
                     <div class="blog-card-footer">Read More</div>
                 </div>
-            </article>
-            <article class="blog-card">
+            </a>            <a href="/uploads/blog-posts/2025-12-31-ai-powered-clinical-decision-support-transforming-healthcare-india.html" class="blog-card">
                 <div class="blog-card-image-wrapper">
                     <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-ai-powered-clinical-decision-support-transforming-healthcare-india.png" alt="Ai Powered Clinical Decision Support Transforming Healthcare India" class="blog-card-image" loading="lazy">
+                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-ai-powered-clinical-decision-support-transforming-healthcare-india.png" alt="Ai Powered Clinical Decision Support Transforming Healthcare India" class="blog-card-image">
                 </div>
                 <div class="blog-card-content">
                     <div class="blog-card-meta">
@@ -1024,11 +864,10 @@
                     <p class="blog-card-desc">Discover how AI-powered clinical decision support systems are revolutionizing healthcare in India. Expert insights from ...</p>
                     <div class="blog-card-footer">Read More</div>
                 </div>
-            </article>
-            <article class="blog-card">
+            </a>            <a href="/uploads/blog-posts/2025-12-31-clinical-decision-support-missing-40-percent.html" class="blog-card">
                 <div class="blog-card-image-wrapper">
                     <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-clinical-decision-support-missing-40-percent.png" alt="Clinical Decision Support Missing 40 Percent" class="blog-card-image" loading="lazy">
+                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-clinical-decision-support-missing-40-percent.png" alt="Clinical Decision Support Missing 40 Percent" class="blog-card-image">
                 </div>
                 <div class="blog-card-content">
                     <div class="blog-card-meta">
@@ -1039,11 +878,10 @@
                     <p class="blog-card-desc">Discover how AI-powered clinical decision support systems unlock the hidden 40% efficiency gap in healthcare delivery. E...</p>
                     <div class="blog-card-footer">Read More</div>
                 </div>
-            </article>
-            <article class="blog-card">
+            </a>            <a href="/uploads/blog-posts/2025-12-31-solving-india-doctor-patient-ratio-ai.html" class="blog-card">
                 <div class="blog-card-image-wrapper">
                     <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-solving-india-doctor-patient-ratio-ai.png" alt="Solving India Doctor Patient Ratio Ai" class="blog-card-image" loading="lazy">
+                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-solving-india-doctor-patient-ratio-ai.png" alt="Solving India Doctor Patient Ratio Ai" class="blog-card-image">
                 </div>
                 <div class="blog-card-content">
                     <div class="blog-card-meta">
@@ -1054,17 +892,15 @@
                     <p class="blog-card-desc">How AI clinical decision support can bridge India&apos;s critical healthcare gap. Nuclear engineer turned healthcare AI pione...</p>
                     <div class="blog-card-footer">Read More</div>
                 </div>
-            </article>
-        </div>
+            </a>        </div>
 
-        <!-- Newsletter Section -->
+        <!-- Newsletter -->
         <section class="newsletter">
             <div class="newsletter-content">
-                <div class="newsletter-icon">📧</div>
                 <h2>Subscribe to Our Newsletter</h2>
-                <p>Stay updated with the latest posts and insights directly in your inbox</p>
+                <p>Stay updated with the latest posts and insights</p>
                 <form class="newsletter-form" onsubmit="handleNewsletter(event)">
-                    <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                    <input type="email" class="newsletter-input" placeholder="Enter your email" required>
                     <button type="submit" class="newsletter-btn">Subscribe</button>
                 </form>
             </div>
@@ -1076,17 +912,7 @@
         <div class="footer-container">
             <div class="footer-brand">
                 <h3>Dr. Daya Shankar Tiwari</h3>
-                <p class="footer-desc">Dean, School of Sciences | VaidyaAI Founder | Transforming Healthcare Through Nuclear Engineering Precision in AI</p>
-                <div class="footer-social">
-                    <a href="https://linkedin.com" class="social-link" aria-label="LinkedIn">in</a>
-                    <a href="mailto:contact@drdayashankar.in" class="social-link" aria-label="Email">✉</a>
-                    <a href="https://github.com" class="social-link" aria-label="GitHub">⚡</a>
-                </div>
-                <div class="footer-achievement">
-                    <div class="achievement-label">VaidyaAI Achievement</div>
-                    <div class="achievement-value">99.7%</div>
-                    <div class="achievement-desc">Medical Diagnostic Accuracy</div>
-                </div>
+                <p>Dean, School of Sciences | VaidyaAI Founder | Nuclear Engineering → Healthcare AI</p>
             </div>
 
             <div class="footer-section">
@@ -1094,66 +920,77 @@
                 <ul class="footer-links">
                     <li><a href="https://drdayashankar.in/about">About</a></li>
                     <li><a href="https://drdayashankar.in/vaidyaai">VaidyaAI</a></li>
-                    <li><a href="https://drdayashankar.in/consulting">Consulting</a></li>
-                    <li><a href="https://drdayashankar.in/speaking">Speaking</a></li>
-                    <li><a href="https://drdayashankar.in/courses">Courses</a></li>
+                    <li><a href="https://blog.drdayashankar.in">Blog</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h4>Research & Expertise</h4>
+                <h4>Research</h4>
                 <ul class="footer-links">
                     <li><a href="#">Physics-Informed AI</a></li>
-                    <li><a href="#">Healthcare Technology</a></li>
+                    <li><a href="#">Healthcare Tech</a></li>
                     <li><a href="#">Medical Diagnostics</a></li>
-                    <li><a href="#">Neural Networks</a></li>
-                    <li><a href="#">Data Science</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
                 <h4>Resources</h4>
                 <ul class="footer-links">
-                    <li><a href="https://blog.drdayashankar.in">Blog</a></li>
                     <li><a href="https://drdayashankar.in/gallery">Gallery</a></li>
-                    <li><a href="https://drdayashankar.in/resources">Resources</a></li>
                     <li><a href="https://drdayashankar.in/contact">Contact</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Dr. Daya Shankar Tiwari. All rights reserved. | Dean, School of Sciences | VaidyaAI Founder | ET GrailHunt PhD</p>
+            <p>&copy; 2025 Dr. Daya Shankar Tiwari. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Email Popup
+        // Popup - FIXED
         setTimeout(function() {
             const lastShown = localStorage.getItem('emailPopupShown');
             const today = new Date().toDateString();
+            
             if (lastShown !== today) {
-                document.getElementById('emailPopup').style.display = 'block';
+                const popup = document.getElementById('emailPopup');
+                popup.classList.add('show');
                 localStorage.setItem('emailPopupShown', today);
+                
                 if (typeof gtag !== 'undefined') {
-                    gtag('event', 'popup_shown', { 'event_category': 'engagement', 'event_label': 'email_signup_popup' });
+                    gtag('event', 'popup_shown', { 
+                        'event_category': 'engagement', 
+                        'event_label': 'email_signup_popup' 
+                    });
                 }
             }
-        }, 30000);
+        }, 30000); // 30 seconds
 
         function closePopup() {
-            document.getElementById('emailPopup').style.display = 'none';
+            const popup = document.getElementById('emailPopup');
+            popup.classList.remove('show');
+            
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'popup_closed', { 'event_category': 'engagement', 'event_label': 'email_signup_popup' });
+                gtag('event', 'popup_closed', { 
+                    'event_category': 'engagement', 
+                    'event_label': 'email_signup_popup' 
+                });
             }
         }
 
         function handleSubmit(event) {
             event.preventDefault();
             const email = document.getElementById('emailInput').value;
+            
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'email_signup', { 'event_category': 'conversion', 'event_label': 'blog_popup' });
+                gtag('event', 'email_signup', { 
+                    'event_category': 'conversion', 
+                    'event_label': 'blog_popup',
+                    'value': email
+                });
             }
+            
             alert('Thanks for subscribing! Check your email for confirmation.');
             closePopup();
             document.getElementById('subscribeForm').reset();
@@ -1161,17 +998,24 @@
 
         function handleNewsletter(event) {
             event.preventDefault();
+            
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'newsletter_signup', { 'event_category': 'conversion', 'event_label': 'footer_newsletter' });
+                gtag('event', 'newsletter_signup', { 
+                    'event_category': 'conversion', 
+                    'event_label': 'footer_newsletter' 
+                });
             }
+            
             alert('Thanks for subscribing!');
             event.target.reset();
         }
 
+        // Close popup when clicking outside
         document.getElementById('emailPopup').addEventListener('click', function(e) {
-            if (e.target === this) { closePopup(); }
+            if (e.target === this) {
+                closePopup();
+            }
         });
     </script>
 </body>
 </html>
-
