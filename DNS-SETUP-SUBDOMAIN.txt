@@ -1,0 +1,110 @@
+# 🌐 DNS SETUP FOR SUBDOMAIN
+# Only blog moves to GitHub Pages
+
+---
+
+## 🎯 WHAT YOU'RE SETTING UP
+
+Main website:  drdayashankar.in         → HOSTINGER (no change)
+Blog subdomain: blog.drdayashankar.in   → GITHUB PAGES (new)
+Portal:        clinical.careandcures.icu → HOSTINGER (no change)
+
+---
+
+## 📋 DNS RECORDS TO ADD
+
+**Go to your domain DNS settings (Hostinger or wherever you bought domain)**
+
+**Add ONE CNAME record:**
+
+Type: CNAME
+Name: blog
+Value: dayashankar-ai.github.io
+TTL: 3600
+
+**That's it!** Just ONE record!
+
+---
+
+## ✅ VERIFICATION STEPS
+
+### Step 1: Add DNS Record (above)
+
+### Step 2: Wait 5-30 minutes for DNS propagation
+
+### Step 3: Go to GitHub Pages settings
+1. Visit: https://github.com/dayashankar-ai/drdayashankar-blog/settings/pages
+2. Under "Custom domain"
+3. Enter: blog.drdayashankar.in
+4. Click "Save"
+5. Wait for DNS check (green checkmark)
+6. Enable "Enforce HTTPS"
+
+### Step 4: Test URLs
+
+After DNS propagates (30 min), test:
+
+https://blog.drdayashankar.in → Should show your blog ✅
+https://drdayashankar.in → Should show your main site (Hostinger) ✅
+
+---
+
+## 🎯 YOUR FINAL ARCHITECTURE
+
+**Hostinger (keeps):**
+- drdayashankar.in (main website)
+- clinical.careandcures.icu (portal)
+- vaidya.careandcures.icu (landing page)
+
+**GitHub Pages (new):**
+- blog.drdayashankar.in (blog only)
+
+**Perfect separation! ✅**
+
+---
+
+## 🔗 UPDATING LINKS
+
+**In your main website (Hostinger), update blog links:**
+
+OLD: https://drdayashankar.in/blog/
+NEW: https://blog.drdayashankar.in
+
+**In your portal/landing pages, update blog links:**
+
+OLD: /blog/
+NEW: https://blog.drdayashankar.in
+
+---
+
+## 📊 DNS PROPAGATION CHECK
+
+After adding CNAME record, check propagation:
+https://dnschecker.org
+
+Enter: blog.drdayashankar.in
+Should show: dayashankar-ai.github.io
+
+---
+
+## ⚠️ IMPORTANT NOTES
+
+1. **Main website UNAFFECTED**
+   - drdayashankar.in stays on Hostinger
+   - No changes to main site
+   - Only blog moves
+
+2. **Portal UNAFFECTED**
+   - clinical.careandcures.icu stays on Hostinger
+   - No changes at all
+
+3. **SEO Benefits**
+   - Blog gets own identity
+   - Can rank independently
+   - Professional setup
+
+4. **Cost**
+   - ZERO additional cost
+   - GitHub Pages FREE
+   - Hostinger unchanged
+

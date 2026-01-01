@@ -492,7 +492,7 @@ header('Content-Type: text/html; charset=UTF-8');
     <div class="container">
         <?php
         // Load posts from JSON
-        $jsonPath = __DIR__ . '/../uploads/blog-posts/posts-list.json';
+        $jsonPath = __DIR__ . '/uploads/blog-posts/posts-list.json';
         $posts = [];
         
         if (file_exists($jsonPath)) {
@@ -632,3 +632,4 @@ header('Content-Type: text/html; charset=UTF-8');
     </script>
 </body>
 </html>
+
