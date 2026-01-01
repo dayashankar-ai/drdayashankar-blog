@@ -1,0 +1,979 @@
+<?php
+header('Content-Type: text/html; charset=UTF-8');
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Healthcare AI Insights | Dr. Daya Shankar Tiwari</title>
+    <meta name="description" content="Practical, board-level guidance to plan, govern, and scale AI in healthcare. Nuclear-grade systems engineering meets clinical safety and ROI models.">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKFH6DZL08"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZKFH6DZL08');
+    </script>
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="PACbaDKONM8AJO9k0IX2AernAKRC0bDUbY7FqDKOIiw">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: linear-gradient(to bottom right, #eff6ff, #ecfdf5);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e1b4b 100%);
+            color: white;
+            padding: 5rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2334D399' fill-opacity='0.05'%3E%3Cpath d='M36 18c3.314 0 6 2.686 6 6s-2.686 6-6 6-6-2.686-6-6 2.686-6 6-6z' stroke='%2334D399' stroke-opacity='.1' stroke-width='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav {
+            background: linear-gradient(to right, #0f172a, #1e3a8a, #1e1b4b);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 5rem;
+            padding: 0 1.5rem;
+        }
+
+        .nav a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 0.9375rem;
+        }
+
+        .nav a:hover {
+            color: #22d3ee;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav a:first-child {
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav a:first-child::before {
+            content: 'DT';
+            width: 2.5rem;
+            height: 2.5rem;
+            background: linear-gradient(135deg, #3b82f6, #10b981);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+        }
+
+        .nav .nav-btn-contact {
+            background: linear-gradient(135deg, #22d3ee, #3b82f6);
+            color: white !important;
+            font-weight: 600;
+            padding: 0.625rem 1.25rem;
+            box-shadow: 0 4px 14px rgba(34, 211, 238, 0.3);
+        }
+
+        .nav .nav-btn-contact:hover {
+            box-shadow: 0 6px 20px rgba(34, 211, 238, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .featured {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .featured-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            min-height: 300px;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 2rem;
+        }
+
+        .featured-badge {
+            background: #3b82f6;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .featured h2 {
+            font-size: 1.875rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .featured p {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+        }
+
+        .featured-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1e293b;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .blog-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+        }
+
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: #94a3b8;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: #1e293b;
+        }
+
+        .blog-card p {
+            color: #64748b;
+            font-size: 0.9375rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card-footer {
+            color: #3b82f6;
+            font-weight: 500;
+            font-size: 0.9375rem;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, #0f172a, #1e3a8a, #1e1b4b);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            width: 24rem;
+            height: 24rem;
+            background: linear-gradient(to right, rgba(34, 211, 238, 0.3), rgba(59, 130, 246, 0.3));
+            border-radius: 9999px;
+            filter: blur(64px);
+            top: -10rem;
+            left: -10rem;
+            animation: footerPulse 4s ease-in-out infinite;
+            opacity: 0.1;
+        }
+
+        .footer::after {
+            content: '';
+            position: absolute;
+            width: 24rem;
+            height: 24rem;
+            background: linear-gradient(to right, rgba(249, 115, 22, 0.2), rgba(236, 72, 153, 0.2));
+            border-radius: 9999px;
+            filter: blur(64px);
+            bottom: -10rem;
+            right: -10rem;
+            animation: footerPulse 4s ease-in-out infinite 1s;
+            opacity: 0.1;
+        }
+
+        @keyframes footerPulse {
+            0%, 100% { opacity: 0.1; transform: scale(1); }
+            50% { opacity: 0.2; transform: scale(1.05); }
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #22d3ee, #3b82f6);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .footer-brand .subtitle {
+            color: #22d3ee;
+            font-size: 0.875rem;
+            margin-top: -0.5rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .footer-links.quick-links li::before { background: #22d3ee; }
+        .footer-links.research-links li:nth-child(1)::before { background: #22d3ee; }
+        .footer-links.research-links li:nth-child(2)::before { background: #f97316; }
+        .footer-links.research-links li:nth-child(3)::before { background: #10b981; }
+        .footer-links.research-links li:nth-child(4)::before { background: #a855f7; }
+        .footer-links.research-links li:nth-child(5)::before { background: #ec4899; }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 0.25rem;
+        }
+
+        .achievement-box {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .achievement-title {
+            color: #22d3ee;
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-value {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #f97316;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .achievement-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom-left {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom-right {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom-right span {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer-bottom-right span:nth-child(1) { color: #22d3ee; }
+        .footer-bottom-right span:nth-child(2) { color: #f97316; }
+        .footer-bottom-right span:nth-child(3) { color: #a855f7; }
+
+        /* Email Popup */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(4px);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-overlay.show {
+            display: flex !important;
+        }
+
+        .popup {
+            background: white;
+            border-radius: 1.5rem;
+            max-width: 480px;
+            width: 90%;
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: all 0.3s;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .popup-overlay.show .popup {
+            transform: scale(1);
+        }
+
+        .popup-header {
+            background: linear-gradient(135deg, #3b82f6, #10b981);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 2rem;
+            height: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            font-size: 1.5rem;
+            line-height: 1;
+            transition: all 0.3s;
+        }
+
+        .popup-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .popup-icon {
+            width: 4rem;
+            height: 4rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+        }
+
+        .popup-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .popup-header p {
+            opacity: 0.9;
+            font-size: 0.9375rem;
+        }
+
+        .popup-body {
+            padding: 2rem;
+        }
+
+        .popup-benefits {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .popup-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: #4b5563;
+        }
+
+        .popup-benefits li::before {
+            content: '✓';
+            width: 1.5rem;
+            height: 1.5rem;
+            background: #dcfce7;
+            color: #16a34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .popup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .popup-form input {
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .popup-form input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .popup-form button {
+            background: linear-gradient(135deg, #3b82f6, #10b981);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .popup-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .popup-privacy {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #9ca3af;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header {
+                padding: 3rem 1rem;
+            }
+
+            .featured {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+                height: auto;
+                padding: 1rem;
+            }
+
+            .nav a:first-child::before {
+                width: 2rem;
+                height: 2rem;
+                font-size: 0.875rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-logo {
+                justify-content: center;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .popup {
+                width: 95%;
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Email Popup -->
+    <div class="popup-overlay" id="emailPopup">
+        <div class="popup">
+            <div class="popup-header">
+                <button class="popup-close" onclick="closePopup()">&times;</button>
+                <div class="popup-icon">📧</div>
+                <h2>Join 5,000+ Healthcare Leaders</h2>
+                <p>Get exclusive AI insights delivered weekly</p>
+            </div>
+            <div class="popup-body">
+                <ul class="popup-benefits">
+                    <li>Weekly AI research summaries</li>
+                    <li>Exclusive healthcare AI case studies</li>
+                    <li>Early access to new publications</li>
+                    <li>Industry trend analysis</li>
+                </ul>
+                <form class="popup-form" onsubmit="handlePopupSubmit(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit">Get Free Insights</button>
+                </form>
+                <p class="popup-privacy">🔒 No spam. Unsubscribe anytime. We respect your privacy.</p>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="https://drdayashankar.in">Dr. Daya Shankar Tiwari</a>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <a href="https://drdayashankar.in">Home</a>
+                <a href="https://drdayashankar.in/about">About</a>
+                <a href="https://drdayashankar.in/vaidyaai">VaidyaAI</a>
+                <a href="https://blog.drdayashankar.in">Blog</a>
+                <a href="https://drdayashankar.in/contact" class="nav-btn-contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>Enterprise Healthcare AI Insights</h1>
+        <p>Practical, board-level guidance to plan, govern, and scale AI in healthcare. Nuclear-grade systems engineering meets clinical safety and ROI models.</p>
+    </div>
+
+    <div class="container">
+        <?php
+        // Load posts from JSON
+        $jsonPath = __DIR__ . '/../uploads/blog-posts/posts-list.json';
+        $posts = [];
+        
+        if (file_exists($jsonPath)) {
+            $jsonContent = file_get_contents($jsonPath);
+            $posts = json_decode($jsonContent, true);
+            
+            // Sort by date (newest first)
+            usort($posts, function($a, $b) {
+                return strcmp($b['date'], $a['date']);
+            });
+        }
+
+        if (!empty($posts)) {
+            // Featured post (first post)
+            $featured = $posts[0];
+            $featuredDate = date('M d, Y', strtotime($featured['date']));
+            
+            // CRITICAL FIX: Use correct thumbnail path
+            $thumbnailPath = '/uploads/blog-posts/thumbnails/' . $featured['date'] . '-' . $featured['slug'] . '.png';
+            
+            echo '<div class="featured">';
+            echo '<div class="featured-image">';
+            echo '<img src="' . htmlspecialchars($thumbnailPath) . '" alt="' . htmlspecialchars($featured['title']) . '" loading="lazy">';
+            echo '</div>';
+            echo '<div class="featured-content">';
+            echo '<span class="featured-badge">Featured</span>';
+            echo '<div class="featured-meta">';
+            echo '<span>�� ' . $featuredDate . '</span>';
+            echo '<span>⏱️ 5-7 min read</span>';
+            echo '</div>';
+            echo '<h2>' . htmlspecialchars($featured['title']) . '</h2>';
+            echo '<p>' . htmlspecialchars($featured['description']) . '</p>';
+            echo '<a href="/uploads/blog-posts/' . $featured['date'] . '-' . $featured['slug'] . '.html" class="btn">Read Full Article</a>';
+            echo '</div>';
+            echo '</div>';
+
+            // Recent articles
+            echo '<h2 class="section-title">Recent Articles</h2>';
+            echo '<div class="blog-grid">';
+            
+            // Show remaining posts (skip featured)
+            for ($i = 1; $i < count($posts); $i++) {
+                $post = $posts[$i];
+                $postDate = date('M d, Y', strtotime($post['date']));
+                
+                // CRITICAL FIX: Use correct thumbnail path
+                $postThumbnail = '/uploads/blog-posts/thumbnails/' . $post['date'] . '-' . $post['slug'] . '.png';
+                
+                echo '<a href="/uploads/blog-posts/' . $post['date'] . '-' . $post['slug'] . '.html" class="blog-card">';
+                echo '<div class="blog-card-image">';
+                echo '<img src="' . htmlspecialchars($postThumbnail) . '" alt="' . htmlspecialchars($post['title']) . '" loading="lazy">';
+                echo '</div>';
+                echo '<div class="blog-card-content">';
+                echo '<div class="blog-card-meta">';
+                echo '<span>📅 ' . $postDate . '</span>';
+                echo '<span>Healthcare AI</span>';
+                echo '</div>';
+                echo '<h3>' . htmlspecialchars($post['title']) . '</h3>';
+                echo '<p>' . htmlspecialchars(substr($post['description'], 0, 120)) . '...</p>';
+                echo '<div class="blog-card-footer">Read More →</div>';
+                echo '</div>';
+                echo '</a>';
+            }
+            
+            echo '</div>';
+        } else {
+            echo '<div style="text-align: center; padding: 4rem 0;">';
+            echo '<p style="font-size: 1.5rem; color: #64748b;">📝 Blog coming soon!</p>';
+            echo '</div>';
+        }
+        ?>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand Column -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">DST</div>
+                    <div>
+                        <h3>Dr. Daya Shankar Tiwari</h3>
+                        <p class="subtitle">Nuclear Engineer + Healthcare AI Expert</p>
+                    </div>
+                </div>
+                <p>Dean of School of Sciences | VaidyaAI Founder | Transforming Healthcare Through Nuclear Engineering Precision in AI</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links quick-links">
+                    <li><a href="https://drdayashankar.in/about">About</a></li>
+                    <li><a href="https://drdayashankar.in/vaidyaai">VaidyaAI</a></li>
+                    <li><a href="https://drdayashankar.in/consulting">Consulting</a></li>
+                    <li><a href="https://drdayashankar.in/speaking">Speaking</a></li>
+                    <li><a href="https://drdayashankar.in/courses">Courses</a></li>
+                    <li><a href="https://drdayashankar.in/gallery">Gallery</a></li>
+                    <li><a href="https://blog.drdayashankar.in">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Research & Expertise -->
+            <div class="footer-section">
+                <h4>Research & Expertise</h4>
+                <ul class="footer-links research-links">
+                    <li>Physics-Informed AI</li>
+                    <li>Healthcare Technology</li>
+                    <li>Medical Diagnostics</li>
+                    <li>Neural Networks</li>
+                    <li>Data Science</li>
+                </ul>
+                
+                <div class="achievement-box">
+                    <div class="achievement-title">VaidyaAI Achievement</div>
+                    <div class="achievement-value">99.7%</div>
+                    <div class="achievement-label">Medical Diagnostic Accuracy</div>
+                </div>
+            </div>
+
+            <!-- Resources (4th column) -->
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul class="footer-links quick-links">
+                    <li><a href="https://drdayashankar.in/resources">Download</a></li>
+                    <li><a href="https://drdayashankar.in/contact">Contact</a></li>
+                    <li><a href="https://www.linkedin.com/in/daya-shankar-tiwary/" target="_blank">LinkedIn</a></li>
+                    <li><a href="mailto:daya@drdayashankar.in">Email</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="footer-bottom-left">
+                    &copy; 2025 Dr. Daya Shankar Tiwari. All rights reserved.
+                </div>
+                <div class="footer-bottom-right">
+                    <span>Dean, School of Sciences</span>
+                    <span>VaidyaAI Founder</span>
+                    <span>IIT Guwahati PhD</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Email Popup - 15 SECONDS
+        setTimeout(function() {
+            const lastShown = localStorage.getItem('emailPopupShown');
+            const today = new Date().toDateString();
+            
+            if (lastShown !== today) {
+                const popup = document.getElementById('emailPopup');
+                popup.classList.add('show');
+                localStorage.setItem('emailPopupShown', today);
+                
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'popup_shown', { 
+                        'event_category': 'engagement', 
+                        'event_label': 'email_signup_popup' 
+                    });
+                }
+            }
+        }, 15000); // 15 SECONDS - EXACTLY AS REQUIRED!
+
+        function closePopup() {
+            const popup = document.getElementById('emailPopup');
+            popup.classList.remove('show');
+            
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'popup_closed', {
+                    'event_category': 'engagement',
+                    'event_label': 'email_signup_popup'
+                });
+            }
+        }
+
+        function handlePopupSubmit(event) {
+            event.preventDefault();
+            alert('Thank you for subscribing! Check your inbox for confirmation.');
+            closePopup();
+            
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'newsletter_signup', {
+                    'event_category': 'conversion',
+                    'event_label': 'blog_popup',
+                    'value': 1
+                });
+            }
+        }
+
+        // Close popup when clicking outside
+        document.getElementById('emailPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePopup();
+            }
+        });
+    </script>
+</body>
+</html>
