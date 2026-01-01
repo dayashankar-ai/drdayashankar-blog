@@ -1,3 +1,6 @@
+<?php
+header('Content-Type: text/html; charset=UTF-8');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enterprise Healthcare AI Insights | Dr. Daya Shankar Tiwari</title>
     <meta name="description" content="Practical, board-level guidance to plan, govern, and scale AI in healthcare. Nuclear-grade systems engineering meets clinical safety and ROI models.">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKFH6DZL08"></script>
@@ -18,126 +18,27 @@
       gtag('config', 'G-ZKFH6DZL08');
     </script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="PACbaDKONM8AJO9k0IX2AernAKRC0bDUbY7FqDKOIiw">
     
     <style>
-        :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --dark: #0f172a;
-            --blue-900: #1e3a8a;
-            --indigo-950: #1e1b4b;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #1a202c;
-            background: #f8fafc;
-            -webkit-font-smoothing: antialiased;
+            background: linear-gradient(to bottom right, #eff6ff, #ecfdf5);
         }
 
-        /* NAVIGATION - EXACT MATCH */
-        .nav {
-            background: linear-gradient(to right, #0f172a, #1e3a8a, #1e1b4b);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 5rem;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-        }
-
-        .nav-logo-icon {
-            width: 3.5rem;
-            height: 3.5rem;
-            background: linear-gradient(135deg, #22d3ee, #3b82f6);
-            border-radius: 0.75rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.125rem;
-            box-shadow: 0 4px 14px rgba(34, 211, 238, 0.3);
-            transition: transform 0.3s;
-        }
-
-        .nav-logo:hover .nav-logo-icon {
-            transform: scale(1.1);
-        }
-
-        .nav-logo-text {
-            color: white;
-            font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: -0.5px;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-link {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9375rem;
-            transition: all 0.3s;
-            padding: 0.5rem 0.75rem;
-            border-radius: 0.5rem;
-            position: relative;
-        }
-
-        .nav-link:hover {
-            color: #22d3ee;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-btn-contact {
-            background: linear-gradient(135deg, #22d3ee, #3b82f6);
-            color: white;
-            font-weight: 700;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 14px rgba(34, 211, 238, 0.3);
-            transition: all 0.3s;
-        }
-
-        .nav-btn-contact:hover {
-            box-shadow: 0 6px 20px rgba(34, 211, 238, 0.5);
-            transform: scale(1.05);
-        }
-
-        /* HEADER - EXACT GRADIENT MATCH */
         .header {
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e1b4b 100%);
             color: white;
-            padding: 5rem 2rem;
+            padding: 5rem 1rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -154,272 +55,253 @@
             opacity: 0.1;
         }
 
-        .header-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .header-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 0.5rem 1.25rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
         .header h1 {
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
             line-height: 1.1;
             letter-spacing: -1.5px;
+            position: relative;
+            z-index: 1;
         }
 
         .header p {
             font-size: 1.25rem;
             opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
             line-height: 1.7;
+            position: relative;
+            z-index: 1;
         }
 
-        /* Container */
-        .container {
+        .nav {
+            background: linear-gradient(to right, #0f172a, #1e3a8a, #1e1b4b);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-content {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 5rem;
+            padding: 0 1.5rem;
         }
 
-        /* Featured Post */
+        .nav a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 0.9375rem;
+        }
+
+        .nav a:hover {
+            color: #22d3ee;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav a:first-child {
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav a:first-child::before {
+            content: 'DT';
+            width: 2.5rem;
+            height: 2.5rem;
+            background: linear-gradient(135deg, #3b82f6, #10b981);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+        }
+
+        .nav .nav-btn-contact {
+            background: linear-gradient(135deg, #22d3ee, #3b82f6);
+            color: white !important;
+            font-weight: 600;
+            padding: 0.625rem 1.25rem;
+            box-shadow: 0 4px 14px rgba(34, 211, 238, 0.3);
+        }
+
+        .nav .nav-btn-contact:hover {
+            box-shadow: 0 6px 20px rgba(34, 211, 238, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
         .featured {
             background: white;
-            border-radius: 24px;
+            border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-            margin-bottom: 5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            transition: all 0.4s;
-        }
-
-        .featured:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 80px rgba(102, 126, 234, 0.2);
+            gap: 2rem;
         }
 
         .featured-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
-            min-height: 400px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            min-height: 300px;
         }
 
         .featured-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s;
-        }
-
-        .featured:hover .featured-image img {
-            transform: scale(1.05);
-        }
-
-        .featured-badge {
-            position: absolute;
-            top: 1.5rem;
-            left: 1.5rem;
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--primary);
-            padding: 0.5rem 1.25rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 700;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .featured-content {
-            padding: 3rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 2rem;
+        }
+
+        .featured-badge {
+            background: #3b82f6;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .featured h2 {
+            font-size: 1.875rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+
+        .featured p {
+            color: #64748b;
+            margin-bottom: 1.5rem;
         }
 
         .featured-meta {
             display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: 1rem;
             font-size: 0.875rem;
-            color: #64748b;
-            font-weight: 500;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
         }
 
-        .featured h2 {
-            font-size: 2.25rem;
-            font-weight: 800;
-            margin-bottom: 1.25rem;
-            line-height: 1.2;
-            letter-spacing: -0.75px;
-        }
-
-        .featured-desc {
-            color: #64748b;
-            margin-bottom: 2rem;
-            font-size: 1.0625rem;
-            line-height: 1.7;
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        .btn {
+            display: inline-block;
+            background: #3b82f6;
             color: white;
-            padding: 1rem 2rem;
-            border-radius: 12px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-            align-self: flex-start;
+            font-weight: 500;
+            transition: all 0.2s;
         }
 
-        .btn-primary:hover {
+        .btn:hover {
+            background: #2563eb;
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
         }
 
-        /* Section */
         .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 0.75rem;
-            letter-spacing: -1px;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1e293b;
         }
 
-        .section-subtitle {
-            color: #64748b;
-            font-size: 1.125rem;
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
             margin-bottom: 3rem;
         }
 
-        /* Blog Grid */
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 4rem;
-        }
-
-        /* Blog Card */
         .blog-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            transition: all 0.4s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s;
             text-decoration: none;
             color: inherit;
-            display: flex;
-            flex-direction: column;
+            display: block;
         }
 
         .blog-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
-        }
-
-        .blog-card-image-wrapper {
-            position: relative;
-            width: 100%;
-            padding-top: 60%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            overflow: hidden;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
         }
 
         .blog-card-image {
-            position: absolute;
-            top: 0;
-            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+        }
+
+        .blog-card-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s;
-        }
-
-        .blog-card:hover .blog-card-image {
-            transform: scale(1.1);
-        }
-
-        .blog-card-category {
-            position: absolute;
-            top: 1.25rem;
-            left: 1.25rem;
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--primary);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8125rem;
-            font-weight: 700;
         }
 
         .blog-card-content {
-            padding: 2rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
+            padding: 1.5rem;
         }
 
         .blog-card-meta {
             display: flex;
             gap: 1rem;
-            margin-bottom: 1rem;
             font-size: 0.875rem;
-            color: #64748b;
-            font-weight: 500;
+            color: #94a3b8;
+            margin-bottom: 1rem;
         }
 
         .blog-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.3;
-            letter-spacing: -0.5px;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: #1e293b;
         }
 
-        .blog-card-desc {
+        .blog-card p {
             color: #64748b;
-            margin-bottom: 1.5rem;
             font-size: 0.9375rem;
-            line-height: 1.7;
-            flex: 1;
+            margin-bottom: 1rem;
         }
 
         .blog-card-footer {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            font-weight: 600;
+            color: #3b82f6;
+            font-weight: 500;
+            font-size: 0.9375rem;
         }
 
-        .blog-card-footer::after {
-            content: '→';
-            transition: transform 0.3s;
-        }
-
-        .blog-card:hover .blog-card-footer::after {
-            transform: translateX(4px);
-        }
-
-        /* FOOTER - EXACT GRADIENT MATCH */
         .footer {
             background: linear-gradient(135deg, #0f172a, #1e3a8a, #1e1b4b);
             color: rgba(255, 255, 255, 0.8);
             padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
             position: relative;
             overflow: hidden;
         }
@@ -432,9 +314,9 @@
             background: linear-gradient(to right, rgba(34, 211, 238, 0.3), rgba(59, 130, 246, 0.3));
             border-radius: 9999px;
             filter: blur(64px);
-            top: 0;
-            left: 0;
-            animation: pulse 4s ease-in-out infinite;
+            top: -10rem;
+            left: -10rem;
+            animation: footerPulse 4s ease-in-out infinite;
             opacity: 0.1;
         }
 
@@ -446,15 +328,15 @@
             background: linear-gradient(to right, rgba(249, 115, 22, 0.2), rgba(236, 72, 153, 0.2));
             border-radius: 9999px;
             filter: blur(64px);
-            bottom: 0;
-            right: 0;
-            animation: pulse 4s ease-in-out infinite 1s;
+            bottom: -10rem;
+            right: -10rem;
+            animation: footerPulse 4s ease-in-out infinite 1s;
             opacity: 0.1;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.1; }
-            50% { opacity: 0.2; }
+        @keyframes footerPulse {
+            0%, 100% { opacity: 0.1; transform: scale(1); }
+            50% { opacity: 0.2; transform: scale(1.05); }
         }
 
         .footer-container {
@@ -462,17 +344,53 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             margin-bottom: 3rem;
             position: relative;
             z-index: 1;
+        }
+
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer-logo-icon {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #22d3ee, #3b82f6);
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
         }
 
         .footer-brand h3 {
             color: white;
             font-size: 1.5rem;
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin: 0;
+        }
+
+        .footer-brand .subtitle {
+            color: #22d3ee;
+            font-size: 0.875rem;
+            margin-top: -0.5rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
         }
 
         .footer-section h4 {
@@ -488,28 +406,103 @@
 
         .footer-links li {
             margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
+
+        .footer-links li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .footer-links.quick-links li::before { background: #22d3ee; }
+        .footer-links.research-links li:nth-child(1)::before { background: #22d3ee; }
+        .footer-links.research-links li:nth-child(2)::before { background: #f97316; }
+        .footer-links.research-links li:nth-child(3)::before { background: #10b981; }
+        .footer-links.research-links li:nth-child(4)::before { background: #a855f7; }
+        .footer-links.research-links li:nth-child(5)::before { background: #ec4899; }
 
         .footer-links a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
 
         .footer-links a:hover {
             color: white;
+            padding-left: 0.25rem;
+        }
+
+        .achievement-box {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .achievement-title {
+            color: #22d3ee;
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-value {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #f97316;
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .achievement-label {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
         }
 
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 2rem;
-            text-align: center;
-            font-size: 0.875rem;
             position: relative;
             z-index: 1;
         }
 
-        /* EMAIL POPUP - 15 SECONDS */
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom-left {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom-right {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom-right span {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer-bottom-right span:nth-child(1) { color: #22d3ee; }
+        .footer-bottom-right span:nth-child(2) { color: #f97316; }
+        .footer-bottom-right span:nth-child(3) { color: #a855f7; }
+
+        /* Email Popup */
         .popup-overlay {
             display: none;
             position: fixed;
@@ -520,93 +513,109 @@
             background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(4px);
             z-index: 10000;
-            animation: fadeIn 0.3s;
+            align-items: center;
+            justify-content: center;
         }
 
         .popup-overlay.show {
-            display: block !important;
+            display: flex !important;
         }
 
         .popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             background: white;
-            border-radius: 24px;
-            padding: 3rem;
-            max-width: 540px;
+            border-radius: 1.5rem;
+            max-width: 480px;
             width: 90%;
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: all 0.3s;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-            animation: slideUp 0.4s;
+        }
+
+        .popup-overlay.show .popup {
+            transform: scale(1);
+        }
+
+        .popup-header {
+            background: linear-gradient(135deg, #3b82f6, #10b981);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
         }
 
         .popup-close {
             position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: #f8fafc;
+            top: 1rem;
+            right: 1rem;
+            width: 2rem;
+            height: 2rem;
+            background: rgba(255, 255, 255, 0.2);
             border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            font-size: 1.5rem;
+            border-radius: 50%;
+            color: white;
             cursor: pointer;
-            transition: all 0.2s;
-            color: #64748b;
+            font-size: 1.5rem;
+            line-height: 1;
+            transition: all 0.3s;
         }
 
         .popup-close:hover {
-            background: #cbd5e1;
-            color: #1a202c;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
         }
 
         .popup-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin: 0 auto 2rem;
-        }
-
-        .popup h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .popup-desc {
-            text-align: center;
-            color: #64748b;
-            margin-bottom: 2rem;
-        }
-
-        .popup-benefits {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .popup-benefits li {
-            padding: 0.875rem 0;
-            display: flex;
-            gap: 1rem;
-        }
-
-        .popup-benefits li::before {
-            content: '✓';
-            width: 28px;
-            height: 28px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
+            width: 4rem;
+            height: 4rem;
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+        }
+
+        .popup-header h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .popup-header p {
+            opacity: 0.9;
+            font-size: 0.9375rem;
+        }
+
+        .popup-body {
+            padding: 2rem;
+        }
+
+        .popup-benefits {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .popup-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: #4b5563;
+        }
+
+        .popup-benefits li::before {
+            content: '✓';
+            width: 1.5rem;
+            height: 1.5rem;
+            background: #dcfce7;
+            color: #16a34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
             font-weight: 700;
             flex-shrink: 0;
         }
@@ -617,67 +626,98 @@
             gap: 1rem;
         }
 
-        .popup-input {
-            padding: 1.125rem 1.5rem;
-            border: 2px solid #cbd5e1;
-            border-radius: 12px;
+        .popup-form input {
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.75rem;
             font-size: 1rem;
+            transition: all 0.3s;
         }
 
-        .popup-input:focus {
+        .popup-form input:focus {
             outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
 
-        .popup-submit {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        .popup-form button {
+            background: linear-gradient(135deg, #3b82f6, #10b981);
             color: white;
-            padding: 1.25rem;
+            padding: 1rem;
             border: none;
-            border-radius: 12px;
-            font-size: 1.125rem;
+            border-radius: 0.75rem;
+            font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
         }
 
-        .popup-submit:hover {
+        .popup-form button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
         }
 
         .popup-privacy {
             text-align: center;
-            font-size: 0.8125rem;
-            color: #64748b;
-            margin-top: 1.5rem;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translate(-50%, -45%); }
-            to { opacity: 1; transform: translate(-50%, -50%); }
-        }
-
-        @media (max-width: 1024px) {
-            .featured, .footer-container {
-                grid-template-columns: 1fr;
-            }
-            .blog-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
+            font-size: 0.75rem;
+            color: #9ca3af;
+            margin-top: 1rem;
         }
 
         @media (max-width: 768px) {
-            .header h1 { font-size: 2.5rem; }
-            .nav-menu { display: none; }
-            .blog-grid { grid-template-columns: 1fr; }
-            .popup { padding: 2rem 1.5rem; }
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header {
+                padding: 3rem 1rem;
+            }
+
+            .featured {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+                height: auto;
+                padding: 1rem;
+            }
+
+            .nav a:first-child::before {
+                width: 2rem;
+                height: 2rem;
+                font-size: 0.875rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-logo {
+                justify-content: center;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .popup {
+                width: 95%;
+                margin: 1rem;
+            }
         }
     </style>
 </head>
@@ -685,232 +725,198 @@
     <!-- Email Popup -->
     <div class="popup-overlay" id="emailPopup">
         <div class="popup">
-            <button class="popup-close" onclick="closePopup()">×</button>
-            <div class="popup-icon">📧</div>
-            <h2>Get Weekly AI Insights</h2>
-            <p class="popup-desc">Join 1,000+ healthcare professionals</p>
-            
-            <ul class="popup-benefits">
-                <li>Latest AI implementation case studies</li>
-                <li>Exclusive ROI calculators & templates</li>
-                <li>Early access to new research</li>
-                <li>Free trial of VaidyaAI platform</li>
-            </ul>
-
-            <form class="popup-form" id="subscribeForm" onsubmit="handleSubmit(event)">
-                <input type="email" class="popup-input" placeholder="Enter your email" required id="emailInput">
-                <button type="submit" class="popup-submit">Subscribe Free</button>
-            </form>
-
-            <p class="popup-privacy">🔒 No spam. Unsubscribe anytime.</p>
+            <div class="popup-header">
+                <button class="popup-close" onclick="closePopup()">&times;</button>
+                <div class="popup-icon">📧</div>
+                <h2>Join 5,000+ Healthcare Leaders</h2>
+                <p>Get exclusive AI insights delivered weekly</p>
+            </div>
+            <div class="popup-body">
+                <ul class="popup-benefits">
+                    <li>Weekly AI research summaries</li>
+                    <li>Exclusive healthcare AI case studies</li>
+                    <li>Early access to new publications</li>
+                    <li>Industry trend analysis</li>
+                </ul>
+                <form class="popup-form" onsubmit="handlePopupSubmit(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit">Get Free Insights</button>
+                </form>
+                <p class="popup-privacy">🔒 No spam. Unsubscribe anytime. We respect your privacy.</p>
+            </div>
         </div>
     </div>
 
-    <!-- Navigation - EXACT MATCH -->
     <nav class="nav">
-        <div class="nav-container">
-            <a href="https://drdayashankar.in" class="nav-logo">
-                <div class="nav-logo-icon">DST</div>
-                <span class="nav-logo-text">Dr. Daya Shankar</span>
-            </a>
-            <ul class="nav-menu">
-                <li><a href="https://drdayashankar.in" class="nav-link">Home</a></li>
-                <li><a href="https://drdayashankar.in/about" class="nav-link">About</a></li>
-                <li><a href="https://drdayashankar.in/vaidyaai" class="nav-link">VaidyaAI</a></li>
-                <li><a href="https://blog.drdayashankar.in" class="nav-link">Blog</a></li>
-                <li><a href="https://drdayashankar.in/contact" class="nav-btn-contact">Contact</a></li>
-            </ul>
+        <div class="nav-content">
+            <a href="https://drdayashankar.in">Dr. Daya Shankar Tiwari</a>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <a href="https://drdayashankar.in">Home</a>
+                <a href="https://drdayashankar.in/about">About</a>
+                <a href="https://drdayashankar.in/vaidyaai">VaidyaAI</a>
+                <a href="https://blog.drdayashankar.in">Blog</a>
+                <a href="https://drdayashankar.in/contact" class="nav-btn-contact">Contact</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Header - EXACT GRADIENT -->
     <div class="header">
-        <div class="header-content">
-            <span class="header-badge">🧠 Enterprise Healthcare AI</span>
-            <h1>Enterprise Healthcare AI Insights</h1>
-            <p>Practical, board-level guidance to plan, govern, and scale AI in healthcare. Nuclear-grade systems engineering meets clinical safety and ROI models.</p>
-        </div>
+        <h1>Enterprise Healthcare AI Insights</h1>
+        <p>Practical, board-level guidance to plan, govern, and scale AI in healthcare. Nuclear-grade systems engineering meets clinical safety and ROI models.</p>
     </div>
 
-    <!-- Main Content -->
     <div class="container">
-        <!-- Featured Post -->
-        <article class="featured">
-            <div class="featured-image">
-                <span class="featured-badge">Featured</span>
-                <img src="/uploads/blog-posts/thumbnails/2025-12-31-real-time-drug-interaction-detection.png" alt="Real Time Drug Interaction Detection">
-            </div>
-            <div class="featured-content">
-                <div class="featured-meta">
-                    <span>📅 Dec 31, 2025</span>
-                    <span>⏱️ 5-7 min read</span>
-                </div>
-                <h2>Real Time Drug Interaction Detection</h2>
-                <p class="featured-desc">How AI prevents 92% of dangerous drug interactions instantly. Nuclear engineer reveals computational approach to medication safety that protects patients and doctors.</p>
-                <a href="/uploads/blog-posts/2025-12-31-real-time-drug-interaction-detection.html" class="btn-primary">Read Full Article <span>→</span></a>
-            </div>
-        </article>
+        <?php
+        // Load posts from JSON
+        $jsonPath = __DIR__ . '/../uploads/blog-posts/posts-list.json';
+        $posts = [];
+        
+        if (file_exists($jsonPath)) {
+            $jsonContent = file_get_contents($jsonPath);
+            $posts = json_decode($jsonContent, true);
+            
+            // Sort by date (newest first)
+            usort($posts, function($a, $b) {
+                return strcmp($b['date'], $a['date']);
+            });
+        }
 
-        <h2 class="section-title">Recent Articles</h2>
-        <p class="section-subtitle">Expert insights on healthcare AI innovation</p>
+        if (!empty($posts)) {
+            // Featured post (first post)
+            $featured = $posts[0];
+            $featuredDate = date('M d, Y', strtotime($featured['date']));
+            
+            // CRITICAL FIX: Use correct thumbnail path
+            $thumbnailPath = '/uploads/blog-posts/thumbnails/' . $featured['date'] . '-' . $featured['slug'] . '.png';
+            
+            echo '<div class="featured">';
+            echo '<div class="featured-image">';
+            echo '<img src="' . htmlspecialchars($thumbnailPath) . '" alt="' . htmlspecialchars($featured['title']) . '" loading="lazy">';
+            echo '</div>';
+            echo '<div class="featured-content">';
+            echo '<span class="featured-badge">Featured</span>';
+            echo '<div class="featured-meta">';
+            echo '<span>�� ' . $featuredDate . '</span>';
+            echo '<span>⏱️ 5-7 min read</span>';
+            echo '</div>';
+            echo '<h2>' . htmlspecialchars($featured['title']) . '</h2>';
+            echo '<p>' . htmlspecialchars($featured['description']) . '</p>';
+            echo '<a href="/uploads/blog-posts/' . $featured['date'] . '-' . $featured['slug'] . '.html" class="btn">Read Full Article</a>';
+            echo '</div>';
+            echo '</div>';
 
-        <div class="blog-grid">            <a href="/uploads/blog-posts/2025-12-31-care-cure-portal-revolutionary-ai-powered-healthcare-management-ecosystem.html" class="blog-card">
-                <div class="blog-card-image-wrapper">
-                    <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-care-cure-portal-revolutionary-ai-powered-healthcare-management-ecosystem.png" alt="Care Cure Portal Revolutionary Ai Powered Healthcare Management Ecosystem" class="blog-card-image">
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-card-meta">
-                        <span>📅 Dec 31, 2025</span>
-                        <span>⏱️ 5-7 min</span>
-                    </div>
-                    <h3>Care Cure Portal Revolutionary Ai Powered Healthcare Management Ecosystem</h3>
-                    <p class="blog-card-desc">Expert insights from Dr. Daya Shankar on healthcare AI innovation.</p>
-                    <div class="blog-card-footer">Read More</div>
-                </div>
-            </a>            <a href="/uploads/blog-posts/2025-12-31-deep-learning-architecture-image-processing-pipeline.html" class="blog-card">
-                <div class="blog-card-image-wrapper">
-                    <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-deep-learning-architecture-image-processing-pipeline.png" alt="Deep Learning Architecture Image Processing Pipeline" class="blog-card-image">
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-card-meta">
-                        <span>📅 Dec 31, 2025</span>
-                        <span>⏱️ 5-7 min</span>
-                    </div>
-                    <h3>Deep Learning Architecture Image Processing Pipeline</h3>
-                    <p class="blog-card-desc">Expert insights from Dr. Daya Shankar on healthcare AI innovation.</p>
-                    <div class="blog-card-footer">Read More</div>
-                </div>
-            </a>            <a href="/uploads/blog-posts/2025-12-31-nuclear-engineering-healthcare-ai.html" class="blog-card">
-                <div class="blog-card-image-wrapper">
-                    <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-nuclear-engineering-healthcare-ai.png" alt="Nuclear Engineering Healthcare Ai" class="blog-card-image">
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-card-meta">
-                        <span>📅 Dec 31, 2025</span>
-                        <span>⏱️ 5-7 min</span>
-                    </div>
-                    <h3>Nuclear Engineering Healthcare Ai</h3>
-                    <p class="blog-card-desc">Discover how nuclear engineering principles deliver 99.7% diagnostic accuracy in healthcare AI. Explore VaidyaAI&apos;s react...</p>
-                    <div class="blog-card-footer">Read More</div>
-                </div>
-            </a>            <a href="/uploads/blog-posts/2025-12-31-computational-fluid-dynamics-principles-applied-to-medical-diagnostics.html" class="blog-card">
-                <div class="blog-card-image-wrapper">
-                    <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-computational-fluid-dynamics-principles-applied-to-medical-diagnostics.png" alt="Computational Fluid Dynamics Principles Applied To Medical Diagnostics" class="blog-card-image">
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-card-meta">
-                        <span>📅 Dec 31, 2025</span>
-                        <span>⏱️ 5-7 min</span>
-                    </div>
-                    <h3>Computational Fluid Dynamics Principles Applied To Medical Diagnostics</h3>
-                    <p class="blog-card-desc">Revolutionary CFD applications transforming medical diagnostics through physics-first thinking, from nuclear thermal hyd...</p>
-                    <div class="blog-card-footer">Read More</div>
-                </div>
-            </a>            <a href="/uploads/blog-posts/2025-12-31-physics-first-thinking-why-your-healthcare-ai-fails-without-first-principles.html" class="blog-card">
-                <div class="blog-card-image-wrapper">
-                    <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-physics-first-thinking-why-your-healthcare-ai-fails-without-first-principles.png" alt="Physics First Thinking Why Your Healthcare Ai Fails Without First Principles" class="blog-card-image">
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-card-meta">
-                        <span>📅 Dec 31, 2025</span>
-                        <span>⏱️ 5-7 min</span>
-                    </div>
-                    <h3>Physics First Thinking Why Your Healthcare Ai Fails Without First Principles</h3>
-                    <p class="blog-card-desc">Discover why physics-first thinking is essential for healthcare AI success. Learn how first principles from nuclear engi...</p>
-                    <div class="blog-card-footer">Read More</div>
-                </div>
-            </a>            <a href="/uploads/blog-posts/2025-12-31-ai-powered-clinical-decision-support-transforming-healthcare-india.html" class="blog-card">
-                <div class="blog-card-image-wrapper">
-                    <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-ai-powered-clinical-decision-support-transforming-healthcare-india.png" alt="Ai Powered Clinical Decision Support Transforming Healthcare India" class="blog-card-image">
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-card-meta">
-                        <span>📅 Dec 31, 2025</span>
-                        <span>⏱️ 5-7 min</span>
-                    </div>
-                    <h3>Ai Powered Clinical Decision Support Transforming Healthcare India</h3>
-                    <p class="blog-card-desc">Discover how AI-powered clinical decision support systems are revolutionizing healthcare in India. Expert insights from ...</p>
-                    <div class="blog-card-footer">Read More</div>
-                </div>
-            </a>            <a href="/uploads/blog-posts/2025-12-31-clinical-decision-support-missing-40-percent.html" class="blog-card">
-                <div class="blog-card-image-wrapper">
-                    <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-clinical-decision-support-missing-40-percent.png" alt="Clinical Decision Support Missing 40 Percent" class="blog-card-image">
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-card-meta">
-                        <span>📅 Dec 31, 2025</span>
-                        <span>⏱️ 5-7 min</span>
-                    </div>
-                    <h3>Clinical Decision Support Missing 40 Percent</h3>
-                    <p class="blog-card-desc">Discover how AI-powered clinical decision support systems unlock the hidden 40% efficiency gap in healthcare delivery. E...</p>
-                    <div class="blog-card-footer">Read More</div>
-                </div>
-            </a>            <a href="/uploads/blog-posts/2025-12-31-solving-india-doctor-patient-ratio-ai.html" class="blog-card">
-                <div class="blog-card-image-wrapper">
-                    <span class="blog-card-category">Healthcare AI</span>
-                    <img src="/uploads/blog-posts/thumbnails/2025-12-31-solving-india-doctor-patient-ratio-ai.png" alt="Solving India Doctor Patient Ratio Ai" class="blog-card-image">
-                </div>
-                <div class="blog-card-content">
-                    <div class="blog-card-meta">
-                        <span>📅 Dec 31, 2025</span>
-                        <span>⏱️ 5-7 min</span>
-                    </div>
-                    <h3>Solving India Doctor Patient Ratio Ai</h3>
-                    <p class="blog-card-desc">How AI clinical decision support can bridge India&apos;s critical healthcare gap. Nuclear engineer turned healthcare AI pione...</p>
-                    <div class="blog-card-footer">Read More</div>
-                </div>
-            </a>        </div>
+            // Recent articles
+            echo '<h2 class="section-title">Recent Articles</h2>';
+            echo '<div class="blog-grid">';
+            
+            // Show remaining posts (skip featured)
+            for ($i = 1; $i < count($posts); $i++) {
+                $post = $posts[$i];
+                $postDate = date('M d, Y', strtotime($post['date']));
+                
+                // CRITICAL FIX: Use correct thumbnail path
+                $postThumbnail = '/uploads/blog-posts/thumbnails/' . $post['date'] . '-' . $post['slug'] . '.png';
+                
+                echo '<a href="/uploads/blog-posts/' . $post['date'] . '-' . $post['slug'] . '.html" class="blog-card">';
+                echo '<div class="blog-card-image">';
+                echo '<img src="' . htmlspecialchars($postThumbnail) . '" alt="' . htmlspecialchars($post['title']) . '" loading="lazy">';
+                echo '</div>';
+                echo '<div class="blog-card-content">';
+                echo '<div class="blog-card-meta">';
+                echo '<span>📅 ' . $postDate . '</span>';
+                echo '<span>Healthcare AI</span>';
+                echo '</div>';
+                echo '<h3>' . htmlspecialchars($post['title']) . '</h3>';
+                echo '<p>' . htmlspecialchars(substr($post['description'], 0, 120)) . '...</p>';
+                echo '<div class="blog-card-footer">Read More →</div>';
+                echo '</div>';
+                echo '</a>';
+            }
+            
+            echo '</div>';
+        } else {
+            echo '<div style="text-align: center; padding: 4rem 0;">';
+            echo '<p style="font-size: 1.5rem; color: #64748b;">📝 Blog coming soon!</p>';
+            echo '</div>';
+        }
+        ?>
     </div>
 
-    <!-- Footer - EXACT GRADIENT MATCH -->
     <footer class="footer">
         <div class="footer-container">
+            <!-- Brand Column -->
             <div class="footer-brand">
-                <h3>Dr. Daya Shankar Tiwari</h3>
-                <p>Dean, School of Sciences | VaidyaAI Founder | Nuclear Engineering → Healthcare AI</p>
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">DST</div>
+                    <div>
+                        <h3>Dr. Daya Shankar Tiwari</h3>
+                        <p class="subtitle">Nuclear Engineer + Healthcare AI Expert</p>
+                    </div>
+                </div>
+                <p>Dean of School of Sciences | VaidyaAI Founder | Transforming Healthcare Through Nuclear Engineering Precision in AI</p>
             </div>
 
+            <!-- Quick Links -->
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <ul class="footer-links">
+                <ul class="footer-links quick-links">
                     <li><a href="https://drdayashankar.in/about">About</a></li>
                     <li><a href="https://drdayashankar.in/vaidyaai">VaidyaAI</a></li>
+                    <li><a href="https://drdayashankar.in/consulting">Consulting</a></li>
+                    <li><a href="https://drdayashankar.in/speaking">Speaking</a></li>
+                    <li><a href="https://drdayashankar.in/courses">Courses</a></li>
+                    <li><a href="https://drdayashankar.in/gallery">Gallery</a></li>
                     <li><a href="https://blog.drdayashankar.in">Blog</a></li>
                 </ul>
             </div>
 
+            <!-- Research & Expertise -->
             <div class="footer-section">
-                <h4>Research</h4>
-                <ul class="footer-links">
-                    <li><a href="#">Physics-Informed AI</a></li>
-                    <li><a href="#">Healthcare Tech</a></li>
-                    <li><a href="#">Medical Diagnostics</a></li>
+                <h4>Research & Expertise</h4>
+                <ul class="footer-links research-links">
+                    <li>Physics-Informed AI</li>
+                    <li>Healthcare Technology</li>
+                    <li>Medical Diagnostics</li>
+                    <li>Neural Networks</li>
+                    <li>Data Science</li>
                 </ul>
+                
+                <div class="achievement-box">
+                    <div class="achievement-title">VaidyaAI Achievement</div>
+                    <div class="achievement-value">99.7%</div>
+                    <div class="achievement-label">Medical Diagnostic Accuracy</div>
+                </div>
             </div>
 
+            <!-- Resources (4th column) -->
             <div class="footer-section">
                 <h4>Resources</h4>
-                <ul class="footer-links">
-                    <li><a href="https://drdayashankar.in/gallery">Gallery</a></li>
+                <ul class="footer-links quick-links">
+                    <li><a href="https://drdayashankar.in/resources">Download</a></li>
                     <li><a href="https://drdayashankar.in/contact">Contact</a></li>
+                    <li><a href="https://www.linkedin.com/in/daya-shankar-tiwary/" target="_blank">LinkedIn</a></li>
+                    <li><a href="mailto:daya@drdayashankar.in">Email</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Dr. Daya Shankar Tiwari. All rights reserved.</p>
+            <div class="footer-bottom-content">
+                <div class="footer-bottom-left">
+                    &copy; 2025 Dr. Daya Shankar Tiwari. All rights reserved.
+                </div>
+                <div class="footer-bottom-right">
+                    <span>Dean, School of Sciences</span>
+                    <span>VaidyaAI Founder</span>
+                    <span>IIT Guwahati PhD</span>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Popup - 15 SECONDS (not 30!)
+        // Email Popup - 15 SECONDS
         setTimeout(function() {
             const lastShown = localStorage.getItem('emailPopupShown');
             const today = new Date().toDateString();
@@ -927,39 +933,46 @@
                     });
                 }
             }
-        }, 15000); // ← 15 SECONDS!
+        }, 15000); // 15 SECONDS - EXACTLY AS REQUIRED!
 
         function closePopup() {
             const popup = document.getElementById('emailPopup');
             popup.classList.remove('show');
             
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'popup_closed', { 
-                    'event_category': 'engagement', 
-                    'event_label': 'email_signup_popup' 
+                gtag('event', 'popup_closed', {
+                    'event_category': 'engagement',
+                    'event_label': 'email_signup_popup'
                 });
             }
         }
 
-        function handleSubmit(event) {
+        function handlePopupSubmit(event) {
             event.preventDefault();
-            const email = document.getElementById('emailInput').value;
+            alert('Thank you for subscribing! Check your inbox for confirmation.');
+            closePopup();
             
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'email_signup', { 
-                    'event_category': 'conversion', 
+                gtag('event', 'newsletter_signup', {
+                    'event_category': 'conversion',
                     'event_label': 'blog_popup',
-                    'value': email
+                    'value': 1
                 });
             }
-            
-            alert('Thanks for subscribing! Check your email for confirmation.');
-            closePopup();
-            document.getElementById('subscribeForm').reset();
         }
 
+        // Close popup when clicking outside
         document.getElementById('emailPopup').addEventListener('click', function(e) {
-            if (e.target === this) { closePopup(); }
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePopup();
+            }
         });
     </script>
 </body>
